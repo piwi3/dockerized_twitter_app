@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo
+    ports:
+    - 27018:27017
+
+  postgresdb:
+    image: postgres
+    ports:
+    - 5555:5432
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=postgres
+
+  streamlit_app:
+    build: streamlit_app
+    volumes:
+      - ./streamlit_app/:/app
+    ports:
+    - 8501:8501
+    depends_on:
+      - mongodb
+      - postgresdb
+
