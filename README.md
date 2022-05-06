@@ -1,4 +1,4 @@
-# dockerized_twitter_app
+# Sentiment analysis of twitter tweets via dockerized pipeline
 Built a twitter sentiment app with streamlit based on a dockerized pipeline using  mongodb, postgresdb and tweepy.
 
 _Note: To run the code, a credentials.py file with personal Tweepy API keys and postgres info (see Dockerfile) needs to be added in the 'streamlit_app' folder._
